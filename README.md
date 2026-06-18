@@ -171,7 +171,7 @@ NeuroAge aims to provide a non-invasive, AI-based framework for studying brain a
 
 ## License
 
-*(Add your preferred license here — e.g., MIT, Apache 2.0 — or specify usage restrictions given the research/educational nature of this project.)*
+* MIT
 
 ---
 
