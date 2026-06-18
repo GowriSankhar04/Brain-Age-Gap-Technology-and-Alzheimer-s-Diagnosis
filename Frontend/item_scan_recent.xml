@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_scan_recent.xml
+    Reusable scan list item used in the Upload and History screens.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.NeuroAge.GlassCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_xs"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/spacing_sm">
+
+        <!-- MRI Thumbnail -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_scan_thumbnail"
+            android:layout_width="@dimen/scan_thumbnail_size"
+            android:layout_height="@dimen/scan_thumbnail_size"
+            android:scaleType="centerCrop"
+            android:alpha="0.6"
+            android:src="@drawable/ic_recent_icon"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.NeuroAge.RoundedSmall"
+            android:background="@color/surface_container_highest" />
+
+        <!-- Patient Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/spacing_sm">
+
+            <TextView
+                android:id="@+id/tv_patient_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PID-8829-X"
+                android:fontFamily="@font/jetbrains_mono_semibold"
+                android:textSize="@dimen/text_data_numeric"
+                android:textColor="@color/primary"
+                android:singleLine="true"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/tv_scan_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24 OCT 2023 • 14:20"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="@dimen/text_body_sm"
+                android:textColor="@color/on_surface_variant" />
+
+        </LinearLayout>
+
+        <!-- Status Badge -->
+        <TextView
+            android:id="@+id/tv_scan_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANALYZED"
+            android:fontFamily="@font/jetbrains_mono_medium"
+            android:textSize="10sp"
+            android:letterSpacing="0.05"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_container"
+            android:background="@drawable/bg_pill_analyzed"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:layout_marginStart="@dimen/spacing_xs"
+            android:layout_marginEnd="6dp" />
+
+        <!-- Chevron -->
+        <ImageView
+            android:layout_width="@dimen/icon_size_medium"
+            android:layout_height="@dimen/icon_size_medium"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/on_surface_variant" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_history.xml
+    Screen 4: Scan History / Analysis History
+    Shows filterable list of past MRI records.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="88dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/margin_mobile"
+            android:paddingEnd="@dimen/margin_mobile"
+            android:paddingTop="@dimen/spacing_md">
+
+            <!-- ─── Header ─── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/spacing_lg">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_logo"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_brain_logo"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.NeuroAge.Circle"
+                    android:background="@color/surface_container_high"
+                    android:padding="4dp"
+                    android:layout_marginEnd="@dimen/spacing_xs" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="NEUROAGE"
+                    android:fontFamily="@font/jetbrains_mono_semibold"
+                    android:textSize="@dimen/text_label_caps"
+                    android:letterSpacing="0.1"
+                    android:textColor="@color/on_surface"
+                    android:textAllCaps="true" />
+
+                <!-- 3-dot overflow menu button -->
+                <ImageView
+                    android:id="@+id/btn_overflow_menu"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_menu"
+                    android:padding="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="@color/on_surface"
+                    android:contentDescription="More options" />
+
+            </LinearLayout>
+
+            <!-- ─── Page Title ─── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analysis History"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="@dimen/text_headline_lg_mobile"
+                android:textColor="@color/on_surface"
+                android:letterSpacing="-0.01"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Access and filter past volumetric MRI analysis records."
+                android:fontFamily="@font/inter_regular"
+                android:textSize="@dimen/text_body_sm"
+                android:textColor="@color/on_surface_variant"
+                android:layout_marginBottom="@dimen/spacing_md" />
+
+            <!-- ─── Search / Filter Input ─── -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_search"
+                style="@style/Widget.NeuroAge.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Filter by file name"
+                app:startIconDrawable="@drawable/ic_search"
+                app:startIconTint="@color/on_surface_variant"
+                android:layout_marginBottom="@dimen/spacing_md"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/jetbrains_mono_medium"
+                    android:textSize="@dimen/text_body_sm"
+                    android:textColor="@color/on_surface"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- ─── Empty State ─── -->
+            <TextView
+                android:id="@+id/tv_empty_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No scans yet. Upload your first MRI to begin."
+                android:fontFamily="@font/inter_regular"
+                android:textSize="@dimen/text_body_sm"
+                android:textColor="@color/on_surface_variant"
+                android:gravity="center"
+                android:padding="@dimen/spacing_lg"
+                android:visibility="gone" />
+
+            <!-- ─── History RecyclerView ─── -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:clipToPadding="false" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ─── Bottom Navigation ─── -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        style="@style/Widget.NeuroAge.BottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_nav_height"
+        android:layout_gravity="bottom"
+        app:itemIconTint="@color/bottom_nav_colors"
+        app:itemTextColor="@color/bottom_nav_colors"
+        app:menu="@menu/bottom_nav_menu"
+        />
+    <!--app:selectedItemId="@id/nav_history"-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

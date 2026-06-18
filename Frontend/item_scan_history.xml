@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_scan_history.xml
+    Full-detail history list item used in the History screen.
+    Shows patient thumbnail, ID, status, biometric data, and AI insight chip.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.NeuroAge.GlassCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_xs"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_sm">
+
+        <!-- ── Top Row: Thumbnail + Info + Status + Chevron ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/spacing_xs">
+
+            <!-- MRI Thumbnail -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_thumb"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="centerCrop"
+                android:alpha="0.7"
+                android:src="@drawable/ic_recent_icon"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.NeuroAge.Circle"
+                android:background="@color/surface_container_highest" />
+
+            <!-- Patient Info -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/spacing_sm">
+
+                <TextView
+                    android:id="@+id/tv_patient_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PID-8829-X"
+                    android:fontFamily="@font/jetbrains_mono_semibold"
+                    android:textSize="@dimen/text_label_caps"
+                    android:textColor="@color/on_surface"
+                    android:singleLine="true"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/tv_scan_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24 OCT 2023 • 14:20"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="@dimen/text_body_sm"
+                    android:textColor="@color/on_surface_variant"
+                    android:layout_marginBottom="4dp" />
+
+                <!-- Status pill inline with date area -->
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Negative / Stable"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="10sp"
+                    android:textColor="@color/primary_container"
+                    android:background="@drawable/bg_pill_analyzed"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp" />
+
+            </LinearLayout>
+
+            <!-- Actions: Delete + Chevron -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="8dp">
+
+                <!-- Delete Button -->
+                <ImageView
+                    android:id="@+id/btn_delete"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_delete"
+                    android:padding="4dp"
+                    app:tint="#E53935"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Delete record" />
+
+                <!-- Chevron -->
+                <ImageView
+                    android:layout_width="@dimen/icon_size_medium"
+                    android:layout_height="@dimen/icon_size_medium"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/on_surface_variant"
+                    android:layout_marginTop="2dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── Biometric Data Row ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/spacing_xs">
+
+            <!-- Metric 1 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_metric1_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SCORE AGE"
+                    android:fontFamily="@font/jetbrains_mono_medium"
+                    android:textSize="9sp"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/on_surface_variant" />
+
+                <TextView
+                    android:id="@+id/tv_metric1_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="68.4 ms"
+                    android:fontFamily="@font/jetbrains_mono_semibold"
+                    android:textSize="@dimen/text_label_caps"
+                    android:textColor="@color/on_surface" />
+
+            </LinearLayout>
+
+            <!-- Metric 2 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_metric2_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHRONO AGE"
+                    android:fontFamily="@font/jetbrains_mono_medium"
+                    android:textSize="9sp"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/on_surface_variant" />
+
+                <TextView
+                    android:id="@+id/tv_metric2_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="70.1 ms"
+                    android:fontFamily="@font/jetbrains_mono_semibold"
+                    android:textSize="@dimen/text_label_caps"
+                    android:textColor="@color/on_surface" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── AI Insight Chip ── -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_ai_insight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/radius_md"
+            app:cardBackgroundColor="@color/surface_container_high"
+            app:strokeColor="@color/secondary_container"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp">
+<!--
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/spacing_xs">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_auto_awesome"
+                    app:tint="@color/secondary"
+                    android:layout_marginEnd="6dp" />
+
+                <TextView
+                    android:id="@+id/tv_ai_insight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="AI Insight: Indicates healthy normal neural aging. Recommended annual review."
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="10sp"
+                    android:textColor="@color/on_surface_variant"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+            </LinearLayout>
+-->
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

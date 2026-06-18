@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
+
+        <!-- ── Top Bar ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"
+            android:background="@color/surface_container">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_back"
+                android:padding="8dp"
+                app:tint="@color/on_surface"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:text="About Us"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="18sp"
+                android:textColor="@color/on_surface" />
+
+        </LinearLayout>
+
+        <!-- ── Hero ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="36dp"
+            android:paddingBottom="24dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/analyzing_brain_image"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.NeuroAge.Circle"
+                android:background="@color/surface_container_high"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="NEUROAGE"
+                android:fontFamily="@font/jetbrains_mono_semibold"
+                android:textSize="22sp"
+                android:letterSpacing="0.1"
+                android:textColor="@color/primary"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Version 1.0.1"
+                android:fontFamily="@font/jetbrains_mono_medium"
+                android:textSize="12sp"
+                android:textColor="@color/on_surface_variant" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="AI-powered brain age estimation and neuroimaging pattern analysis using deep learning on volumetric MRI scans."
+                android:fontFamily="@font/inter_regular"
+                android:textSize="13sp"
+                android:textColor="@color/on_surface_variant"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.4" />
+
+        </LinearLayout>
+
+        <!-- ── What We Do ── -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.NeuroAge.GlassCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About NeuroAge"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textSize="15sp"
+                    android:textColor="@color/on_surface"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NeuroAge is an AI-powered neuroimaging platform developed to assist in brain age estimation and research-oriented neuroimaging analysis from structural MRI scans. The application leverages advanced deep learning techniques to analyze volumetric brain imaging data and provide research-oriented analysis outputs within seconds."
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="13sp"
+                    android:textColor="@color/on_surface_variant"
+                    android:lineSpacingMultiplier="1.4" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/outline_variant" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Developed By"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textSize="13sp"
+                    android:textColor="@color/primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="• Abithakaveri S&#10;• Akash R&#10;• Gowri Sankhar S"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="13sp"
+                    android:textColor="@color/on_surface_variant" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Guided By"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textSize="13sp"
+                    android:textColor="@color/primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Dr. Udaykumar M"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="13sp"
+                    android:textColor="@color/on_surface_variant" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Institution"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textSize="13sp"
+                    android:textColor="@color/primary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="School of Chemical and Biotechnology&#10;SASTRA Deemed to be University&#10;Thanjavur, Tamil Nadu, India"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="13sp"
+                    android:textColor="@color/on_surface_variant" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>        <!-- ── Key Metrics ── -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.NeuroAge.GlassCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Technology Stack"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textSize="15sp"
+                    android:textColor="@color/on_surface"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• MultiTask ResNet Deep Learning Architecture&#10;• Structural MRI Analysis (.nii / .nii.gz)&#10;• Brain Age Prediction&#10;• Neuroimaging Pattern Classification&#10;• Android + FastAPI Backend&#10;• AI-powered Neuroimaging Analysis"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="13sp"
+                    android:textColor="@color/on_surface_variant"
+                    android:lineSpacingMultiplier="1.4" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+        <!-- ── Disclaimer ── -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="4dp"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="@color/surface_container_high"
+            app:strokeColor="@color/secondary_container"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="top">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_auto_awesome"
+                    app:tint="@color/secondary"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="1dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_regular"
+                    android:lineSpacingMultiplier="1.4"
+                    android:text="For research and educational purposes only. Not a substitute for professional medical diagnosis."
+                    android:textColor="@color/on_surface_variant"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
