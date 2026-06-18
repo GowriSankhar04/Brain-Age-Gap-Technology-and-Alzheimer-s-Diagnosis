@@ -152,12 +152,6 @@ The trained model is deployed via **Hugging Face**, with the Android app communi
 - Android application development
 - Hugging Face deployment
 
-**🚧 In Progress**
-- Brain Age Gap statistical analysis
-- Research manuscript preparation
-- Performance optimization
-- Additional validation studies
-
 ## Research Significance
 
 NeuroAge aims to provide a non-invasive, AI-based framework for studying brain aging and neurodegeneration, with potential applications in:
